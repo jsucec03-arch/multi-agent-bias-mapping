@@ -2,70 +2,101 @@
 
 ## Overview
 
-This is a conceptual research proposal for modeling cognitive bias using a multi-agent AI system. Instead of attempting to eliminate bias, the system explicitly models different biases as separate agents and analyzes their interpretations.
+MABMS is a conceptual research proposal exploring how cognitive biases shape interpretation.
 
-## Core Idea
+Instead of reducing bias, this project models bias explicitly using multiple AI agents with distinct interpretative frameworks, and analyzes their outputs on identical inputs.
 
-Each agent represents a distinct interpretative framework (bias model), such as:
-- empirical (minimizing assumptions)
-- narrative (maximizing causality and meaning)
-- pragmatic (optimizing for functionality)
-- skeptical (challenging conclusions)
+## Research Problem
 
-All agents receive the same input but generate different interpretations.
+Human reasoning is inherently biased, and current approaches in AI primarily focus on bias reduction.
 
-By analyzing where agents converge and diverge, the system aims to:
-- identify structural distortions in interpretation
-- distinguish signal from cognitive noise
-- map the limits of human understanding
+However, there is no clear framework for understanding how different biases systematically transform the same input into different interpretations.
 
 ## Research Questions
 
-- How do different predefined bias models affect interpretation of identical inputs?
-- Can convergence across heterogeneous agents be used as a proxy for reduced interpretative distortion?
-- Which types of bias consistently introduce systematic error across domains?
+- How do different bias models affect interpretation of identical inputs?
+- Can agreement across heterogeneous agents indicate reduced interpretative distortion?
+- Which biases consistently introduce systematic error?
+
+## Core Concept
+
+The system consists of multiple agents, each representing a distinct bias model:
+
+- Empirical agent → minimizes assumptions  
+- Narrative agent → maximizes causality and meaning  
+- Pragmatic agent → optimizes for usefulness  
+- Skeptical agent → challenges all conclusions  
+
+All agents:
+- receive identical input  
+- produce independent interpretations  
+
+The system then analyzes:
+- convergence (agreement)
+- divergence (disagreement)
+- stability across inputs  
 
 ## Method (Conceptual)
 
-- Define 3–5 agents with distinct bias frameworks  
-- Provide identical inputs (text, scenarios, decision problems)  
-- Collect and compare outputs  
-- Analyze:
-  - agreement rate  
-  - divergence patterns  
-  - consistency across different input types  
+1. Define a set of bias-driven agents  
+2. Provide identical inputs (text, scenarios, decision problems)  
+3. Collect outputs  
+4. Measure:
+   - agreement rate  
+   - divergence structure  
+   - cross-domain consistency  
 
-## Motivation
+## Hypothesis
 
-Human perception and reasoning are inherently biased. Current approaches in AI and cognitive science focus primarily on bias reduction, but do not provide a clear framework for understanding how different biases shape interpretation.
+Bias is not only a source of error, but also a structured transformation of input.
 
-This proposal explores the idea that controlled bias modeling may provide deeper insights than bias elimination.
+By modeling bias explicitly, we can:
+- map interpretative distortion  
+- identify stable signals across perspectives  
+- better understand limits of cognition  
 
 ## Innovation
 
 Unlike standard approaches (bias reduction), this project:
-- explicitly models bias as a variable
-- compares multiple interpretative systems in parallel
-- identifies stable conclusions across conflicting perspectives
 
-## Related Fields
+- treats bias as a measurable variable  
+- compares multiple interpretations in parallel  
+- focuses on structure of disagreement, not just accuracy  
 
-- Multi-agent systems  
+## Related Work & Context
+
+This idea connects to:
+
+- multi-agent systems  
 - AI interpretability  
-- Cognitive bias modeling  
+- cognitive bias research  
 - AI alignment  
+
+Modern multi-agent frameworks already coordinate multiple agents to solve complex tasks :contentReference[oaicite:0]{index=0}, but they typically optimize performance rather than analyze interpretative divergence.
 
 ## Potential Applications
 
 - AI alignment and interpretability  
-- disinformation analysis  
-- decision-making in complex systems  
-- modeling human perception and error  
+- disinformation detection  
+- decision support systems  
+- modeling human reasoning  
+
+## Limitations
+
+- No implementation yet  
+- Conceptual framework only  
+- Requires formalization for empirical validation  
 
 ## Status
 
-This is an early-stage conceptual research idea.  
-There is currently no implementation.
+Early-stage research concept.  
+No code implemented.
+
+## Next Steps
+
+- Define minimal prototype using LLM agents  
+- Test on controlled datasets  
+- Analyze divergence patterns  
 
 ## Author
 
