@@ -151,8 +151,73 @@ Using these metrics together:
 
 ---
 
-## Future Improvements
+## Baseline Agent (Minimal-Bias Reference)
 
-- Automate scoring using semantic similarity (LLMs or embeddings)  
-- Cluster interpretations using vector space models  
-- Introduce weighting per agent (bias strength tuning)  
+### Purpose
+
+The Baseline Agent serves as a reference point for evaluating bias influence.
+
+It does not eliminate bias (which is impossible), but minimizes assumptions and applies consistent interpretation rules.
+
+---
+
+### Definition
+
+The Baseline Agent operates under the following constraints:
+
+- Uses only explicitly stated information  
+- Avoids inference beyond given data  
+- Does not assign meaning, intention, or narrative  
+- Does not optimize for usefulness or outcome  
+- Does not challenge assumptions unless contradictory  
+
+---
+
+### Behavior
+
+Given an input, the Baseline Agent:
+
+1. Extracts observable facts  
+2. Lists measurable relationships  
+3. Avoids conclusions unless directly supported  
+
+---
+
+### Example Output
+
+Input:
+
+"A company introduces a new AI system to automate customer support. Within 3 months, costs are reduced by 30%, but customer satisfaction drops by 15%."
+
+Baseline Agent Output:
+
+- Costs decreased by 30% after implementation  
+- Customer satisfaction decreased by 15%  
+- There is a trade-off between cost reduction and satisfaction  
+- No causal explanation is confirmed by the data  
+
+---
+
+### Role in Evaluation
+
+The Baseline Agent is used to:
+
+- Compare deviation of other agents (Bias Influence Score)  
+- Identify added assumptions or interpretations  
+- Serve as a minimal-reference interpretation  
+
+---
+
+### Limitations
+
+- Still subject to structural bias (selection, framing)  
+- Cannot represent “true objectivity”  
+- May under-interpret meaningful patterns  
+
+---
+
+### Integration into Metrics
+
+- Used as reference for Bias Influence Score (BIS)  
+- Helps define “distance from minimal interpretation”  
+- Anchors comparison across agents  
