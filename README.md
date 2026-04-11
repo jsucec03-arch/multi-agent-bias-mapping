@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a conceptual proposal for modeling cognitive bias using a multi-agent AI system. Instead of attempting to eliminate bias, the system explicitly models different biases as separate agents and analyzes their interpretations.
+This is a conceptual research proposal for modeling cognitive bias using a multi-agent AI system. Instead of attempting to eliminate bias, the system explicitly models different biases as separate agents and analyzes their interpretations.
 
 ## Core Idea
 
@@ -19,28 +19,54 @@ By analyzing where agents converge and diverge, the system aims to:
 - distinguish signal from cognitive noise
 - map the limits of human understanding
 
+## Research Questions
+
+- How do different predefined bias models affect interpretation of identical inputs?
+- Can convergence across heterogeneous agents be used as a proxy for reduced interpretative distortion?
+- Which types of bias consistently introduce systematic error across domains?
+
+## Method (Conceptual)
+
+- Define 3–5 agents with distinct bias frameworks  
+- Provide identical inputs (text, scenarios, decision problems)  
+- Collect and compare outputs  
+- Analyze:
+  - agreement rate  
+  - divergence patterns  
+  - consistency across different input types  
+
 ## Motivation
 
 Human perception and reasoning are inherently biased. Current approaches in AI and cognitive science focus primarily on bias reduction, but do not provide a clear framework for understanding how different biases shape interpretation.
 
 This proposal explores the idea that controlled bias modeling may provide deeper insights than bias elimination.
 
+## Innovation
+
+Unlike standard approaches (bias reduction), this project:
+- explicitly models bias as a variable
+- compares multiple interpretative systems in parallel
+- identifies stable conclusions across conflicting perspectives
+
+## Related Fields
+
+- Multi-agent systems  
+- AI interpretability  
+- Cognitive bias modeling  
+- AI alignment  
+
 ## Potential Applications
 
-- AI alignment and interpretability
-- disinformation analysis
-- decision-making in complex systems
-- modeling human perception and error
+- AI alignment and interpretability  
+- disinformation analysis  
+- decision-making in complex systems  
+- modeling human perception and error  
 
 ## Status
 
-This is an early-stage conceptual idea.  
+This is an early-stage conceptual research idea.  
 There is currently no implementation.
 
-## Notes
+## Author
 
-The goal of this project is not to define objective truth, but to better understand how different interpretative systems transform the same input into different outputs.
-
-## Josip Sučec
-
-Independent concept proposal.
+Independent research concept (open for collaboration)
