@@ -98,6 +98,14 @@ No code implemented.
 - Test on controlled datasets  
 - Analyze divergence patterns  
 
-## Author
+## Author Note
 
-Independent research concept (open for collaboration)
+This project is an independent conceptual proposal.
+
+I am not a programmer or AI engineer, and this repository does not represent a technical implementation. The goal is to present a structured idea that may be of interest to researchers or developers working in AI, cognitive science, or related fields.
+
+The concept itself emerged through iterative discussion and refinement, including interaction with AI systems.
+
+This project is intentionally shared as an open idea, with no expectation of ownership, monetization, or attribution.
+
+If the concept is useful, it is free to be explored, implemented, or extended by others.
