@@ -1,223 +1,254 @@
-# Example Experiment: Bias Divergence Test
-
-## Goal
-
-Demonstrate how different bias models produce different interpretations of the same input, and identify patterns of convergence and divergence.
-
-## Setup
-
-Define 4 agents, each representing a distinct interpretative bias:
-
-- Empirical Agent → focuses only on observable facts, avoids assumptions  
-- Narrative Agent → constructs meaning, causality, and story  
-- Pragmatic Agent → evaluates usefulness and practical implications  
-- Skeptical Agent → questions assumptions and challenges conclusions  
-
-## Input
-
-Provide the same input to all agents.
-
-### Example Input
-
-"A company introduces a new AI system to automate customer support. Within 3 months, costs are reduced by 30%, but customer satisfaction drops by 15%."
-
-## Task
-
-Each agent must answer:
-
-1. What is happening in this situation?  
-2. What is the most important factor?  
-3. What should be done next?  
-
-## Expected Behavior
-
-Each agent should produce a distinct interpretation:
-
-- Empirical → focuses on measurable trade-offs (cost vs satisfaction)  
-- Narrative → frames a story (e.g., efficiency vs human connection)  
-- Pragmatic → evaluates outcome (is this acceptable or not?)  
-- Skeptical → questions data, assumptions, or hidden variables  
-
-## Analysis
-
-Compare outputs across agents and evaluate:
-
-### 1. Convergence
-- Do any agents reach similar conclusions?
-- Which aspects of the situation are consistently identified?
-
-### 2. Divergence
-- Where do interpretations differ significantly?
-- Which biases lead to conflicting conclusions?
-
-### 3. Stability
-- If input is slightly modified, do conclusions remain consistent?
-- Which agents are more sensitive to changes?
-
-## Hypothesis
-
-Different bias models will produce systematically different interpretations, even with identical input.
-
-Patterns of convergence may indicate:
-- more stable interpretations
-- lower interpretative distortion
-
-Patterns of divergence may indicate:
-- bias-driven distortion
-- areas of ambiguity in the input
-
-## Limitations
-
-- This is a conceptual experiment  
-- No quantitative metrics defined yet  
-- Results depend on implementation of agents  
-
-## Quantitative Evaluation (Agreement & Divergence Metrics)
-
-To move beyond qualitative comparison, we introduce simple scoring metrics:
-
-### 1. Agreement Score (AS)
-
-Measures how similar agent conclusions are.
-
-**Method:**
-- Extract key conclusions from each agent (1–3 statements)
-- Compare overlap between agents
-
-**Scoring:**
-- 1.0 → all agents agree (same conclusion)
-- 0.5 → partial overlap
-- 0.0 → completely different conclusions
-
-**Example:**
-- 3/4 agents recommend “improve customer satisfaction” → high agreement (~0.75)
 
 ---
 
-### 2. Divergence Score (DS)
+# Example Experiment: Multi-Agent Bias Mapping Prototype
 
-Measures how much interpretations differ.
+## Objective
 
-**Method:**
-- Identify conflicting conclusions or priorities
-- Count distinct interpretation clusters
+The goal of this experiment is to test the core hypothesis of the MABMS framework:
 
-**Scoring:**
-- 0.0 → no divergence (all agree)
-- 1.0 → maximum divergence (all agents differ)
+> Different constructed perspectives systematically transform the same input into distinct interpretations, and structured analysis of their divergence can reveal meaningful signals.
 
-**Simple formula:**
+This experiment focuses on:
 
-DS = (number of unique interpretations - 1) / (number of agents - 1)
+* multi-perspective interpretation
+* minority signal detection
+* basic adversarial validation
 
 ---
 
-### 3. Bias Influence Score (BIS)
+## Experimental Setup
 
-Measures how strongly a specific bias shapes conclusions.
+### Perspectives (Agents)
 
-**Method:**
-- Compare each agent’s output to a neutral baseline (if defined)
-- Evaluate how much the conclusion deviates
+The system uses five constructed perspectives:
 
-**Interpretation:**
-- High BIS → strong bias-driven interpretation
-- Low BIS → closer to shared/common interpretation
+1. **Empirical**
 
----
+   * Extracts only explicitly stated information
+   * Minimizes assumptions
 
-### 4. Stability Score (SS)
+2. **Interpretive (Narrative)**
 
-Measures consistency of interpretations under small input changes.
+   * Builds causal explanations and coherent meaning
 
-**Method:**
-- Slightly modify input (e.g. change % values or context)
-- Compare outputs before/after
+3. **Skeptical (Critical)**
 
-**Scoring:**
-- 1.0 → no change in conclusions
-- 0.0 → completely different conclusions
+   * Challenges conclusions and identifies weaknesses
 
----
+4. **Systemic**
 
-## Composite Insight
+   * Places the input within a broader context
 
-Using these metrics together:
+5. **Pragmatic**
 
-- High AS + Low DS → stable, low-distortion interpretation  
-- Low AS + High DS → high uncertainty or strong bias influence  
-- High SS → robust interpretation  
-- Low SS → sensitive to framing / input variation  
+   * Focuses on usefulness and actionable implications
+
+All agents receive identical input.
 
 ---
 
-## Baseline Agent (Minimal-Bias Reference)
+### Input Type
 
-### Purpose
+Use short, controlled text inputs such as:
 
-The Baseline Agent serves as a reference point for evaluating bias influence.
+* news excerpts
+* ambiguous scenarios
+* decision problems
 
-It does not eliminate bias (which is impossible), but minimizes assumptions and applies consistent interpretation rules.
+Example input:
 
----
-
-### Definition
-
-The Baseline Agent operates under the following constraints:
-
-- Uses only explicitly stated information  
-- Avoids inference beyond given data  
-- Does not assign meaning, intention, or narrative  
-- Does not optimize for usefulness or outcome  
-- Does not challenge assumptions unless contradictory  
+> “A company reports a 20% increase in revenue after implementing a new AI system. Employee turnover also increased by 15% during the same period.”
 
 ---
 
-### Behavior
+## Procedure
 
-Given an input, the Baseline Agent:
+### Step 1: Generate Interpretations
 
-1. Extracts observable facts  
-2. Lists measurable relationships  
-3. Avoids conclusions unless directly supported  
+Each perspective produces an independent interpretation:
 
----
+[
+y_i = P_i(x)
+]
 
-### Example Output
+Outputs should include:
 
-Input:
-
-"A company introduces a new AI system to automate customer support. Within 3 months, costs are reduced by 30%, but customer satisfaction drops by 15%."
-
-Baseline Agent Output:
-
-- Costs decreased by 30% after implementation  
-- Customer satisfaction decreased by 15%  
-- There is a trade-off between cost reduction and satisfaction  
-- No causal explanation is confirmed by the data  
+* key observations
+* reasoning
+* conclusion
 
 ---
 
-### Role in Evaluation
+### Step 2: Identify Majority and Minority
 
-The Baseline Agent is used to:
+Group outputs based on similarity of conclusions.
 
-- Compare deviation of other agents (Bias Influence Score)  
-- Identify added assumptions or interpretations  
-- Serve as a minimal-reference interpretation  
-
----
-
-### Limitations
-
-- Still subject to structural bias (selection, framing)  
-- Cannot represent “true objectivity”  
-- May under-interpret meaningful patterns  
+* Majority = dominant interpretation cluster
+* Minority = divergent interpretation(s)
 
 ---
 
-### Integration into Metrics
+### Step 3: Compute Minority Score
 
-- Used as reference for Bias Influence Score (BIS)  
-- Helps define “distance from minimal interpretation”  
-- Anchors comparison across agents  
+For each minority interpretation:
+
+[
+Score_m = \left(\sum w_i\right) \cdot D_m \cdot C_m
+]
+
+Where:
+
+* ( w_i ) = perspective weights
+* ( D_m ) = divergence from majority
+* ( C_m ) = coherence
+
+---
+
+### Step 4: Trigger Anti-Agent
+
+Activate Anti-Agent if:
+
+* a 3 vs 2 split exists
+  OR
+* the Empirical perspective is in the minority
+
+---
+
+### Step 5: Anti-Agent Evaluation
+
+The Anti-Agent performs:
+
+#### (A) Majority Stress Test
+
+* Identify assumptions in majority interpretation
+* Generate counter-hypothesis
+
+#### (B) Minority Evaluation
+
+* Test whether minority:
+
+  * resolves inconsistencies
+  * provides stronger explanation
+  * remains coherent under challenge
+
+---
+
+### Step 6: Mirror Calibration (Optional)
+
+For selected perspectives:
+
+1. Generate mirror output
+2. Compare with original
+
+[
+S_p = 1 - D(p, p_{mirror})
+]
+
+Use this to:
+
+* detect instability
+* adjust weights
+
+---
+
+## Expected Observations
+
+The experiment aims to observe:
+
+* how often perspectives agree
+* when minority signals emerge
+* whether minority signals reveal overlooked aspects
+* how robust majority interpretations are under adversarial testing
+
+---
+
+## Evaluation Criteria
+
+Since no ground truth is assumed, evaluation is structural:
+
+### 1. Consistency
+
+* Do similar inputs produce similar divergence patterns?
+
+### 2. Stability
+
+* Do interpretations remain stable under mirror transformations?
+
+### 3. Sensitivity
+
+* Does small input change produce large interpretative shifts?
+
+### 4. Adversarial Robustness
+
+* Does the majority survive Anti-Agent challenge?
+
+---
+
+## Example Outcomes
+
+Possible results include:
+
+* **Strong Consensus**
+
+  * low divergence
+  * high stability
+
+* **Weak Consensus**
+
+  * majority exists but collapses under Anti-Agent
+
+* **High-Value Minority**
+
+  * minority explains anomalies better than majority
+
+* **Noise Divergence**
+
+  * disagreement without structure or coherence
+
+---
+
+## Limitations of Experiment
+
+* No objective ground truth
+* Dependent on quality of LLM outputs
+* Similarity and coherence metrics are approximations
+* Small-scale prototype may not generalize
+
+---
+
+## Next Iterations
+
+Future experiments may include:
+
+* larger datasets
+* automated similarity metrics
+* quantitative evaluation of minority scoring
+* testing different perspective definitions
+* comparing 3 vs 5 agent configurations
+
+---
+
+## Minimal Implementation Suggestion
+
+A simple prototype can be built using:
+
+* one LLM
+* prompt templates for each perspective
+* manual or heuristic similarity comparison
+
+---
+
+## Summary
+
+This experiment demonstrates a minimal implementation of the MABMS framework, focusing on:
+
+* structured interpretative diversity
+* minority signal identification
+* adversarial validation
+
+The goal is not to determine truth, but to:
+
+> map how interpretation changes under different constructed perspectives and evaluate the structure of disagreement.
+
+---
