@@ -1,0 +1,608 @@
+
+
+\---
+
+
+
+\# Perspective Definitions and Validation Criteria
+
+
+
+\## Multi-Agent Perspective Mapping System (MAPMS)
+
+
+
+\## Purpose
+
+
+
+This document defines the operational structure of the five core perspectives used in MAPMS.
+
+
+
+Each perspective is not defined by tone or style, but by:
+
+
+
+\* the questions it asks
+
+\* what it accepts as valid
+
+\* what it rejects
+
+\* how it validates information
+
+\* where it systematically fails
+
+
+
+The goal is to ensure that each perspective produces \*\*structurally distinct interpretations\*\* of the same input.
+
+
+
+\---
+
+
+
+\## Conceptual Definition
+
+
+
+A perspective is defined as:
+
+
+
+> A constrained interpretative operator governed by a specific set of questions, validation rules, and rejection criteria.
+
+
+
+Differences between perspectives must be epistemological, not stylistic.
+
+
+
+\---
+
+
+
+\# 1. Empirical Perspective
+
+
+
+\## Core Function
+
+
+
+Reduce interpretation to observable and verifiable elements.
+
+
+
+\---
+
+
+
+\## Primary Questions
+
+
+
+\* What is explicitly stated?
+
+\* What is directly observable?
+
+\* What can be verified from the input?
+
+\* What information is missing?
+
+
+
+\---
+
+
+
+\## Acceptance Criteria
+
+
+
+\* Explicit statements
+
+\* Observable or measurable claims
+
+\* Clearly defined relationships
+
+
+
+\---
+
+
+
+\## Rejection Criteria
+
+
+
+\* Inferred causality
+
+\* Speculation
+
+\* Interpretative narratives without evidence
+
+
+
+\---
+
+
+
+\## Validation Method
+
+
+
+\* Consistency with input
+
+\* Absence of assumptions
+
+\* Traceability to source data
+
+
+
+\---
+
+
+
+\## Failure Mode
+
+
+
+\* Over-reduction of complex information
+
+\* Inability to capture implicit structure or meaning
+
+
+
+\---
+
+
+
+\# 2. Interpretive (Narrative) Perspective
+
+
+
+\## Core Function
+
+
+
+Construct meaning through coherence and causality.
+
+
+
+\---
+
+
+
+\## Primary Questions
+
+
+
+\* What is the underlying story?
+
+\* What caused this?
+
+\* How are elements connected?
+
+\* What does this imply?
+
+
+
+\---
+
+
+
+\## Acceptance Criteria
+
+
+
+\* Coherent explanation
+
+\* Logical causal flow
+
+\* Internal consistency
+
+
+
+\---
+
+
+
+\## Rejection Criteria
+
+
+
+\* Fragmented or disconnected data
+
+\* Contradictions within explanation
+
+
+
+\---
+
+
+
+\## Validation Method
+
+
+
+\* Narrative coherence
+
+\* Explanatory completeness
+
+\* Logical consistency
+
+
+
+\---
+
+
+
+\## Failure Mode
+
+
+
+\* Fabrication of causality
+
+\* Overfitting a story to limited data
+
+
+
+\---
+
+
+
+\# 3. Skeptical (Critical) Perspective
+
+
+
+\## Core Function
+
+
+
+Challenge assumptions and test the strength of conclusions.
+
+
+
+\---
+
+
+
+\## Primary Questions
+
+
+
+\* What could be wrong?
+
+\* What is not proven?
+
+\* What assumptions are hidden?
+
+\* What alternative explanations exist?
+
+
+
+\---
+
+
+
+\## Acceptance Criteria
+
+
+
+\* Falsifiability
+
+\* Identification of uncertainty
+
+\* Logical rigor
+
+
+
+\---
+
+
+
+\## Rejection Criteria
+
+
+
+\* Unjustified conclusions
+
+\* Implicit assumptions without support
+
+
+
+\---
+
+
+
+\## Validation Method
+
+
+
+\* Ability to expose weaknesses
+
+\* Logical consistency under scrutiny
+
+\* Detection of contradictions
+
+
+
+\---
+
+
+
+\## Failure Mode
+
+
+
+\* Excessive doubt
+
+\* Rejection without constructive alternatives
+
+
+
+\---
+
+
+
+\# 4. Systemic Perspective
+
+
+
+\## Core Function
+
+
+
+Place information within a broader system and context.
+
+
+
+\---
+
+
+
+\## Primary Questions
+
+
+
+\* What larger system is this part of?
+
+\* What external factors influence it?
+
+\* What dependencies exist?
+
+\* What are second-order effects?
+
+
+
+\---
+
+
+
+\## Acceptance Criteria
+
+
+
+\* Contextual integration
+
+\* Identification of relationships
+
+\* Multi-level reasoning
+
+
+
+\---
+
+
+
+\## Rejection Criteria
+
+
+
+\* Isolated interpretation
+
+\* Ignoring external context
+
+
+
+\---
+
+
+
+\## Validation Method
+
+
+
+\* Consistency across system levels
+
+\* Plausibility within broader context
+
+\* Structural coherence
+
+
+
+\---
+
+
+
+\## Failure Mode
+
+
+
+\* Over-complexification
+
+\* Loss of focus on core issue
+
+
+
+\---
+
+
+
+\# 5. Pragmatic Perspective
+
+
+
+\## Core Function
+
+
+
+Translate interpretation into actionable insight.
+
+
+
+\---
+
+
+
+\## Primary Questions
+
+
+
+\* What should be done?
+
+\* What is useful here?
+
+\* What are the risks?
+
+\* What is the simplest effective action?
+
+
+
+\---
+
+
+
+\## Acceptance Criteria
+
+
+
+\* Actionability
+
+\* Clarity
+
+\* Feasibility
+
+
+
+\---
+
+
+
+\## Rejection Criteria
+
+
+
+\* Purely theoretical explanations
+
+\* Non-operational conclusions
+
+
+
+\---
+
+
+
+\## Validation Method
+
+
+
+\* Real-world applicability
+
+\* Decision usefulness
+
+\* Clarity of outcomes
+
+
+
+\---
+
+
+
+\## Failure Mode
+
+
+
+\* Oversimplification
+
+\* Ignoring truth in favor of utility
+
+
+
+\---
+
+
+
+\# Cross-Perspective Integrity
+
+
+
+For the system to function correctly:
+
+
+
+\* Perspectives must remain \*\*strictly distinct\*\*
+
+\* Overlap must be minimized through clear constraints
+
+\* Each perspective must operate independently
+
+
+
+\---
+
+
+
+\## Critical Requirement
+
+
+
+> If two perspectives produce similar outputs, the distinction between them is insufficiently defined.
+
+
+
+\---
+
+
+
+\# Summary
+
+
+
+The five perspectives represent five distinct interpretative logics:
+
+
+
+\* \*\*Empirical\*\* → What is verifiably true
+
+\* \*\*Interpretive\*\* → What it means
+
+\* \*\*Skeptical\*\* → What may be wrong
+
+\* \*\*Systemic\*\* → How it fits into a larger system
+
+\* \*\*Pragmatic\*\* → What should be done
+
+
+
+Together, they form a structured system for:
+
+
+
+\* generating interpretative diversity
+
+\* analyzing disagreement
+
+\* identifying stable signals across perspectives
+
+
+
+\---
+
+
+
+
+
