@@ -1,0 +1,343 @@
+---
+
+# Prompt Specification
+
+## Multi-Agent Perspective Mapping System (MAPMS)
+
+## Purpose
+
+This document defines strict prompt specifications for each perspective.
+
+The goal is to ensure:
+
+* consistent behavior across runs
+* maximal divergence between perspectives
+* minimal stylistic overlap
+* reproducible outputs
+
+---
+
+## Global Prompt Rules (All Perspectives)
+
+These rules apply to every perspective.
+
+### 1. Input Consistency
+
+* All agents receive identical input
+* No additional context is allowed
+
+---
+
+### 2. Output Structure (Mandatory)
+
+Each response MUST follow this structure:
+
+```
+OBSERVATIONS:
+- ...
+
+REASONING:
+- ...
+
+CONCLUSION:
+- ...
+```
+
+---
+
+### 3. Constraints
+
+* No role blending (each agent must stay in its perspective)
+* No referencing other perspectives
+* No meta-commentary about the system
+* No hedging language unless required by the perspective
+
+---
+
+### 4. Length Control
+
+* Keep outputs concise but complete
+* Avoid verbosity and repetition
+
+---
+
+### 5. Determinism Guideline
+
+* Responses should aim for consistency across repeated runs
+* Avoid randomness or creative expansion beyond constraints
+
+---
+
+# Perspective Prompt Definitions
+
+---
+
+## 1. Empirical Perspective
+
+### Prompt
+
+```
+Analyze the input using only explicitly stated information.
+
+Do NOT:
+- infer causality
+- speculate
+- interpret meaning beyond what is directly stated
+
+Only include:
+- observable facts
+- verifiable statements
+- clearly stated relationships
+
+Strictly avoid assumptions.
+
+Follow the required output structure.
+```
+
+---
+
+### Hard Constraints
+
+* No causal language (e.g., "because", "leads to")
+* No interpretation of intent
+* No external knowledge
+
+---
+
+---
+
+## 2. Interpretive (Narrative) Perspective
+
+### Prompt
+
+```
+Construct a coherent interpretation of the input.
+
+Focus on:
+- causal relationships
+- underlying meaning
+- how elements connect
+
+You may infer relationships, but they must form a consistent explanation.
+
+Avoid contradictions.
+
+Follow the required output structure.
+```
+
+---
+
+### Hard Constraints
+
+* Must include causal reasoning
+* Must produce a unified explanation
+* Cannot remain purely descriptive
+
+---
+
+---
+
+## 3. Skeptical (Critical) Perspective
+
+### Prompt
+
+```
+Critically evaluate the input.
+
+Focus on:
+- identifying weaknesses
+- exposing assumptions
+- proposing alternative explanations
+
+Do NOT accept conclusions without challenge.
+
+Be rigorous and precise.
+
+Follow the required output structure.
+```
+
+---
+
+### Hard Constraints
+
+* Must challenge at least one core assumption
+* Must provide at least one alternative explanation
+* Cannot accept the input at face value
+
+---
+
+---
+
+## 4. Systemic Perspective
+
+### Prompt
+
+```
+Analyze the input within a broader system.
+
+Focus on:
+- external factors
+- dependencies
+- wider context
+- second-order effects
+
+Expand beyond the immediate input.
+
+Follow the required output structure.
+```
+
+---
+
+### Hard Constraints
+
+* Must introduce external context
+* Must include at least one second-order effect
+* Cannot remain isolated to input-only analysis
+
+---
+
+---
+
+## 5. Pragmatic Perspective
+
+### Prompt
+
+```
+Focus on practical implications.
+
+Determine:
+- what actions should be taken
+- what is useful
+- what risks exist
+
+Prioritize clarity and feasibility.
+
+Follow the required output structure.
+```
+
+---
+
+### Hard Constraints
+
+* Must produce at least one actionable step
+* Must include risk consideration
+* Cannot remain theoretical
+
+---
+
+# Anti-Agent Prompt
+
+### Triggered Condition
+
+* 3 vs 2 split
+  OR
+* empirical perspective is in minority
+
+---
+
+### Prompt
+
+```
+The majority interpretation is:
+
+[INSERT SUMMARY]
+
+Your task:
+
+1. Identify hidden assumptions in the majority view
+2. Challenge its validity
+3. Construct a strong counter-interpretation
+4. Evaluate whether the minority interpretation is more robust
+
+Be direct and analytical.
+
+Follow the required output structure.
+```
+
+---
+
+# Mirror Function Prompt
+
+### Purpose
+
+Calibration and stability testing
+
+---
+
+### Prompt Template
+
+```
+Re-analyze the input by inverting the core assumptions of your previous reasoning.
+
+Do not repeat the same logic.
+
+Produce a materially different interpretation.
+
+Follow the required output structure.
+```
+
+---
+
+# Time Agent Prompt
+
+## Time Agent is a purposed fail-safe, activated after evaluation of five base perspectives, not yet fully integrated
+   in the readme documentation
+
+### Purpose
+
+Temporal re-evaluation of interpretations
+
+---
+
+### Prompt
+
+```
+Re-evaluate the input after a temporal shift.
+
+Assume:
+- initial interpretations may contain bias
+- some conclusions may not persist over time
+
+Your task:
+
+1. Reassess the original conclusions
+2. Identify what remains stable
+3. Identify what changes or weakens
+4. Provide an updated interpretation
+
+Follow the required output structure.
+```
+
+---
+
+# Output Integrity Checks
+
+After each run, verify:
+
+* Each perspective follows its constraints
+* Outputs are structurally different
+* No perspective violates its rejection criteria
+
+---
+
+## Failure Conditions
+
+The system is considered degraded if:
+
+* multiple perspectives produce near-identical outputs
+* empirical perspective includes interpretation
+* skeptical perspective fails to challenge
+* pragmatic perspective produces no action
+
+---
+
+# Summary
+
+This prompt specification ensures that:
+
+* each perspective behaves as a distinct interpretative operator
+* divergence is intentional and structured
+* outputs are comparable and analyzable
+
+---
+
